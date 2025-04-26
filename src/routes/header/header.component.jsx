@@ -48,17 +48,22 @@ const Header = () => {
 					<span>BODY CARE</span>
 					{isDropdownOpen && (
 						<div className="dropdown">
-							<a href="/shop/bodycare/showergel">Shower Gel</a>
-							<a href="/shop/bodycare/bodylotion">Body Lotions</a>
-							<a href="/shop/bodycare/handcare">
+							<Link to="/shop/bodycare/showergel">
+								Shower Gel
+							</Link>
+							<Link to="/shop/bodycare/bodylotion">
+								Body Lotions
+							</Link>
+							<Link to="/shop/bodycare/handcare">
 								Hand and Foot Care
-							</a>
-
-							<a href="/shop/bodycare/showergel">Body Oils</a>
-							<a href="/shop/bodycare/showergel">Body Peelings</a>
-							<a href="/shop/bodycare/showergel">
+							</Link>
+							<Link to="/shop/bodycare/showergel">Body Oils</Link>
+							<Link to="/shop/bodycare/showergel">
+								Body Peelings
+							</Link>
+							<Link to="/shop/bodycare/showergel">
 								Sun Protection
-							</a>
+							</Link>
 						</div>
 					)}
 				</div>

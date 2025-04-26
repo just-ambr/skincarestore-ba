@@ -41,7 +41,7 @@ const Slider = ({ startIndex }) => {
 					<div className="slide-content">
 						<div className="text-content">
 							<div className="title" data-swiper-parallax="-300">
-								SKIN CARE Slide 1
+								SKIN CARE
 							</div>
 							<div className="text" data-swiper-parallax="-100">
 								<p>
@@ -73,7 +73,7 @@ const Slider = ({ startIndex }) => {
 					<div className="slide-content">
 						<div className="text-content">
 							<div className="title" data-swiper-parallax="-300">
-								BODY CARE Slide 2
+								BODY CARE
 							</div>
 							<div className="text" data-swiper-parallax="-100">
 								<p>
@@ -103,7 +103,7 @@ const Slider = ({ startIndex }) => {
 					<div className="slide-content">
 						<div className="text-content">
 							<div className="title" data-swiper-parallax="-300">
-								HAIR CARE Slide 3
+								HAIR CARE
 							</div>
 							<div className="text" data-swiper-parallax="-100">
 								<p>
@@ -134,7 +134,7 @@ const Slider = ({ startIndex }) => {
 					<div className="slide-content">
 						<div className="text-content">
 							<div className="title" data-swiper-parallax="-300">
-								ACCESSOIRES Slide 4
+								ACCESSOIRES
 							</div>
 							<div className="text" data-swiper-parallax="-100">
 								<p>
@@ -166,7 +166,7 @@ const Slider = ({ startIndex }) => {
 					<div className="slide-content">
 						<div className="text-content">
 							<div className="title" data-swiper-parallax="-300">
-								OUR BOXES Slide 5
+								OUR BOXES
 							</div>
 							<div className="text" data-swiper-parallax="-100">
 								<p>
@@ -198,7 +198,7 @@ const Slider = ({ startIndex }) => {
 					<div className="slide-content">
 						<div className="text-content">
 							<div className="title" data-swiper-parallax="-300">
-								SKIN CONCERNS Slide 6
+								SKIN CONCERNS
 							</div>
 							<div className="text" data-swiper-parallax="-100">
 								<p>

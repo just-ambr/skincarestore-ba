@@ -20,9 +20,7 @@ const Box = ({ imageSrc, imageAlt, title, description }) => {
 				<div className="box-info">
 					<h3>{title}</h3>
 					<p>{description}</p>
-					<Button buttonType="inverted">
-						Add to cart OR Link to Route?
-					</Button>
+					<Button buttonType="inverted">Add to cart</Button>
 				</div>
 			</div>
 		</div>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import { selectCartTotal } from "../../store/cart/cart.selector";
 import { selectCurrentUser } from "../../store/user/user.selector";
@@ -10,6 +11,7 @@ import Button from "../button/button.component";
 import "./payment-form.styles.scss";
 
 const PaymentForm = ({ userData, isFormComplete, showForm, isLoggedIn }) => {
+	const navigate = useNavigate();
 	const stripe = useStripe();
 	const elements = useElements();
 	const amount = useSelector(selectCartTotal);
@@ -70,6 +72,9 @@ const PaymentForm = ({ userData, isFormComplete, showForm, isLoggedIn }) => {
 		} else {
 			if (paymentResult.paymentIntent.status === "succeeded") {
 				alert("Payment Successful!");
+				setTimeout(() => {
+					navigate("/");
+				}, 100);
 			}
 		}
 	};

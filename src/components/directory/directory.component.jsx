@@ -29,7 +29,7 @@ export const categories = [
 		title: "ACCESSOIRES",
 		imageUrl:
 			"https://images.unsplash.com/photo-1531166970740-9c3f74ffc420?q=80&w=2948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-		route: "shop/skinconcerns",
+		route: "shop/accessoires",
 	},
 	{
 		id: 5,
@@ -37,12 +37,6 @@ export const categories = [
 		imageUrl:
 			"https://images.unsplash.com/photo-1608145264900-e9905d0d6de8?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 		route: "shop/boxes",
-	},
-	{
-		id: 6,
-		title: "6th added for test",
-		imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
-		route: "shop/mens",
 	},
 ];
 

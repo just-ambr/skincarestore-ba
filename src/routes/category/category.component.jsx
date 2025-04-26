@@ -79,6 +79,8 @@ const Category = () => {
 		if (category === "bodycare") return 1;
 		if (category === "haircare") return 2;
 		if (category === "accessoires") return 3;
+		if (category === "boxes") return 4;
+		if (category === "skinconcerns") return 5;
 		return 0;
 	};
 
