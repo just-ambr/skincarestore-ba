@@ -12,6 +12,7 @@ import { checkUserSession } from "./store/user/user.action";
 import Footer from "./components/footer/footer-component";
 import Header from "./routes/header/header.component";
 import UserProfile from "./components/user-profile/user-profile.component";
+import ScrollToTop from "./components/scroll-to-top/scroll-to-top.component";
 
 const App = () => {
 	const dispatch = useDispatch();
@@ -23,6 +24,7 @@ const App = () => {
 	return (
 		<div className="app-container" style={{ backgroundColor: "#faf9f6" }}>
 			<Navigation />
+			<ScrollToTop />
 			<Header />
 			<Routes>
 				<Route index element={<Home />} />
