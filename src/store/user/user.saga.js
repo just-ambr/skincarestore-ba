@@ -85,11 +85,6 @@ export function* signUp({ payload: { email, password, displayName } }) {
 		yield put(signUpSuccess(user, { displayName }));
 	} catch (error) {
 		yield put(signUpFailed(error));
-		if (error.code === "auth/email-already-in-use") {
-			alert("Cannot create user, email already in use");
-		} else {
-			alert("Sign up failed: " + error.message);
-		}
 	}
 }
 
