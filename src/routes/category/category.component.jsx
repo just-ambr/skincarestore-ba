@@ -27,52 +27,68 @@ const Category = () => {
 	const categories = useSelector(selectCategories);
 	const filteredProducts = useSelector(selectFilteredProducts);
 
+	// useEffect(() => {
+	// 	if (category && subcategory) {
+	// 		const subcategories = subcategory.split(",");
+	// 		dispatch(fetchProductsBySubCategoryStart(category, subcategories));
+	// 	} else if (category) {
+	// 		setProducts(categoriesMap[category] || []);
+	// 	} else {
+	// 		const allProducts = categories.flatMap((cat) => cat.items);
+	// 		setProducts(allProducts);
+	// 	}
+	// }, [category, subcategory, categoriesMap, categories, dispatch]);
+
+	// useEffect(() => {
+	// 	if (subcategory) {
+	// 		console.log(
+	// 			"Gefilterte Produkte in der Komponente:",
+	// 			filteredProducts
+	// 		);
+	// 		setProducts(filteredProducts);
+	// 	} else if (category) {
+	// 		setProducts(categoriesMap[category] || []);
+	// 	}
+	// }, [filteredProducts, subcategory, category, categoriesMap]);
+
+	// useEffect(() => {
+	// 	console.log("Products in state:", products);
+	// }, [products]);
+
+	// useEffect(() => {
+	// 	console.log(
+	// 		"Categories in Redux store after data loading:",
+	// 		categoriesMap
+	// 	);
+	// 	console.log("Products for the category:", categoriesMap[category]);
+	// }, [category, categoriesMap]);
+
+	// useEffect(() => {
+	// 	console.log(
+	// 		"Kategorien im Redux-Store nach Datenladung:",
+	// 		categoriesMap
+	// 	);
+	// 	console.log("Produkte für die Kategorie:", categoriesMap[category]);
+	// 	if (categoriesMap[category]) {
+	// 		setProducts(categoriesMap[category]);
+	// 	}
+	// }, [category, categoriesMap]);
+
 	useEffect(() => {
-		if (category && subcategory) {
-			const subcategories = subcategory.split(",");
-			dispatch(fetchProductsBySubCategoryStart(category, subcategories));
-		} else if (category) {
-			setProducts(categoriesMap[category] || []);
-		} else {
+		if (!categoriesMap || Object.keys(categoriesMap).length === 0) return;
+
+		if (subcategory && filteredProducts.length > 0) {
+			console.log("Setting filtered products (Subcategory active)");
+			setProducts(filteredProducts);
+		} else if (category && categoriesMap[category]) {
+			console.log("Setting category products");
+			setProducts(categoriesMap[category]);
+		} else if (categories.length > 0) {
+			console.log("Setting all products (no category)");
 			const allProducts = categories.flatMap((cat) => cat.items);
 			setProducts(allProducts);
 		}
-	}, [category, subcategory, categoriesMap, categories, dispatch]);
-
-	useEffect(() => {
-		if (subcategory) {
-			console.log(
-				"Gefilterte Produkte in der Komponente:",
-				filteredProducts
-			);
-			setProducts(filteredProducts);
-		} else if (category) {
-			setProducts(categoriesMap[category] || []);
-		}
-	}, [filteredProducts, subcategory, category, categoriesMap]);
-
-	useEffect(() => {
-		console.log("Products in state:", products);
-	}, [products]);
-
-	useEffect(() => {
-		console.log(
-			"Categories in Redux store after data loading:",
-			categoriesMap
-		);
-		console.log("Products for the category:", categoriesMap[category]);
-	}, [category, categoriesMap]);
-
-	useEffect(() => {
-		console.log(
-			"Kategorien im Redux-Store nach Datenladung:",
-			categoriesMap
-		);
-		console.log("Produkte für die Kategorie:", categoriesMap[category]);
-		if (categoriesMap[category]) {
-			setProducts(categoriesMap[category]);
-		}
-	}, [category, categoriesMap]);
+	}, [category, subcategory, categoriesMap, filteredProducts, categories]);
 
 	const getStartIndex = () => {
 		if (category === "skincare") return 0;
