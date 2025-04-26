@@ -7,9 +7,8 @@ import React, { useState } from "react";
 const Header = () => {
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-	const toggleDropdown = () => {
-		setIsDropdownOpen(!isDropdownOpen);
-	};
+	const openDropdown = () => setIsDropdownOpen(true);
+	const closeDropdown = () => setIsDropdownOpen(false);
 
 	return (
 		<header className="header" style={{ backgroundColor: "#faf9f6" }}>
@@ -17,8 +16,8 @@ const Header = () => {
 			<nav className="header-nav">
 				<div
 					className="nav-item"
-					onMouseEnter={toggleDropdown}
-					onMouseLeave={toggleDropdown}>
+					onMouseEnter={openDropdown}
+					onMouseLeave={closeDropdown}>
 					<span>SKIN CARE</span>
 					{isDropdownOpen && (
 						<div className="dropdown">
@@ -43,25 +42,25 @@ const Header = () => {
 				</div>
 				<div
 					className="nav-item"
-					onMouseEnter={toggleDropdown}
-					onMouseLeave={toggleDropdown}>
+					onMouseEnter={openDropdown}
+					onMouseLeave={closeDropdown}>
 					<span>BODY CARE</span>
 					{isDropdownOpen && (
 						<div className="dropdown">
-							<Link to="/shop/bodycare/showergel">
-								Shower Gel
+							<Link to="/shop/bodycare/showergels">
+								Shower Gels
 							</Link>
-							<Link to="/shop/bodycare/bodylotion">
+							<Link to="/shop/bodycare/bodylotions">
 								Body Lotions
 							</Link>
 							<Link to="/shop/bodycare/handcare">
 								Hand and Foot Care
 							</Link>
-							<Link to="/shop/bodycare/showergel">Body Oils</Link>
-							<Link to="/shop/bodycare/showergel">
+							<Link to="/shop/bodycare/bodyoils">Body Oils</Link>
+							<Link to="/shop/bodycare/bodypeelings">
 								Body Peelings
 							</Link>
-							<Link to="/shop/bodycare/showergel">
+							<Link to="/shop/bodycare/sunprotection">
 								Sun Protection
 							</Link>
 						</div>
@@ -69,63 +68,69 @@ const Header = () => {
 				</div>
 				<div
 					className="nav-item"
-					onMouseEnter={toggleDropdown}
-					onMouseLeave={toggleDropdown}>
+					onMouseEnter={openDropdown}
+					onMouseLeave={closeDropdown}>
 					<span>HAIR CARE</span>
 					{isDropdownOpen && (
 						<div className="dropdown">
-							<a href="/shop/haircare/shampoo">Shampoos</a>
-							<a href="/shop/haircare/shampoo">Conditioners</a>
-							<a href="/shop/haircare/shampoo">
-								Hair Masks & Hair Treatments
-							</a>
-							<a href="/shop/haircare/shampoo">
+							<Link to="/shop/haircare/shampoos">Shampoos</Link>
+							<Link to="/shop/haircare/conditioners">
+								Conditioners
+							</Link>
+							<Link to="/shop/haircare/hairtreatments">
+								Hair Masks & Treatments
+							</Link>
+							<Link to="/shop/haircare/scalpcare">
 								Hair + Scalp Oils & Scalp Care
-							</a>
+							</Link>
 						</div>
 					)}
 				</div>
 				<div
 					className="nav-item"
-					onMouseEnter={toggleDropdown}
-					onMouseLeave={toggleDropdown}>
+					onMouseEnter={openDropdown}
+					onMouseLeave={closeDropdown}>
 					<span>ACCESSOIRES</span>
 					{isDropdownOpen && (
 						<div className="dropdown">
-							<a href="/shop/accessoires/">Tools</a>
-							<a href="/shop/accessoires/">Techs</a>
+							<Link to="/shop/accessoires/tools">Tools</Link>
+							<Link to="/shop/accessoires/tech">Tech</Link>
 						</div>
 					)}
 				</div>
 				<div
 					className="nav-item"
-					onMouseEnter={toggleDropdown}
-					onMouseLeave={toggleDropdown}>
+					onMouseEnter={openDropdown}
+					onMouseLeave={closeDropdown}>
 					<span>OUR BOXES</span>
 					{isDropdownOpen && (
 						<div className="dropdown">
-							<a href="/shop/boxes">All Boxes</a>
+							<Link to="/shop/boxes/all">All Boxes</Link>
 						</div>
 					)}
 				</div>
 				<div
 					className="nav-item"
-					onMouseEnter={toggleDropdown}
-					onMouseLeave={toggleDropdown}>
+					onMouseEnter={openDropdown}
+					onMouseLeave={closeDropdown}>
 					<span>SKIN CONCERNS</span>
 					{isDropdownOpen && (
 						<div className="dropdown">
-							<a href="/shop/skinconcerns/antiaging">
+							<Link to="/shop/skinconcerns/antiaging">
 								Anti-Aging
-							</a>
-							<a href="/shop/skinconcerns/antiaging">
+							</Link>
+							<Link to="/shop/skinconcerns/sensitiveskin">
 								Sensitive Skin
-							</a>
-							<a href="/shop/skinconcerns/antiaging">
+							</Link>
+							<Link to="/shop/skinconcerns/acneprone">
 								Acne Prone Skin
-							</a>
-							<a href="/shop/skinconcerns/antiaging">Dry Skin</a>
-							<a href="/shop/skinconcerns/antiaging">Oily Skin</a>
+							</Link>
+							<Link to="/shop/skinconcerns/dryskin">
+								Dry Skin
+							</Link>
+							<Link to="/shop/skinconcerns/oilyskin">
+								Oily Skin
+							</Link>
 						</div>
 					)}
 				</div>

@@ -75,20 +75,21 @@ const Category = () => {
 	// }, [category, categoriesMap]);
 
 	useEffect(() => {
-		if (!categoriesMap || Object.keys(categoriesMap).length === 0) return;
-
-		if (subcategory && filteredProducts.length > 0) {
-			console.log("Setting filtered products (Subcategory active)");
-			setProducts(filteredProducts);
-		} else if (category && categoriesMap[category]) {
-			console.log("Setting category products");
-			setProducts(categoriesMap[category]);
-		} else if (categories.length > 0) {
-			console.log("Setting all products (no category)");
-			const allProducts = categories.flatMap((cat) => cat.items);
-			setProducts(allProducts);
+		if (category && subcategory) {
+			const subcategories = subcategory.split(",");
+			dispatch(fetchProductsBySubCategoryStart(category, subcategories));
 		}
-	}, [category, subcategory, categoriesMap, filteredProducts, categories]);
+	}, [category, subcategory, dispatch]);
+
+	useEffect(() => {
+		if (subcategory && filteredProducts.length > 0) {
+			setProducts(filteredProducts);
+		} else if (category && categoriesMap[category]?.length > 0) {
+			setProducts(categoriesMap[category]);
+		} else {
+			setProducts([]);
+		}
+	}, [filteredProducts, subcategory, category, categoriesMap]);
 
 	const getStartIndex = () => {
 		if (category === "skincare") return 0;
