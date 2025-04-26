@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 
+import { useSelector } from "react-redux";
+import { selectUserError } from "../../store/user/user.selector";
+import { useEffect } from "react";
+
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
 
@@ -19,6 +23,17 @@ const SignUpForm = () => {
 	const [formFields, setFormFields] = useState(defaultFormFields);
 	const { displayName, email, password, confirmPassword } = formFields;
 	const dispatch = useDispatch();
+
+	const error = useSelector(selectUserError);
+	useEffect(() => {
+		if (error) {
+			if (error.code === "auth/email-already-in-use") {
+				alert("Cannot create user, email already in use");
+			} else {
+				alert("Something went wrong: " + error.message);
+			}
+		}
+	}, [error]);
 
 	const resetFormFields = () => {
 		setFormFields(defaultFormFields);
